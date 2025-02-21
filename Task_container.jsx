@@ -1,12 +1,17 @@
 "use client";
 import { useState } from "react";
 
-export const Task_container = ({ check_name, delelteClick }) => {
-  const [isChecked, setIsChecked] = useState(false);
+export const Task_container = ({
+  check_name,
+  delelteClick,
+  isChecked,
+  onCheckboxChange,
+}) => {
+  // const [isChecked, setIsChecked] = useState(false);
 
-  const handleOnChange = () => {
-    setIsChecked(!isChecked);
-  };
+  // const handleOnChange = () => {
+  //   setIsChecked(!isChecked);
+  // };
 
   return (
     <div
@@ -17,7 +22,8 @@ export const Task_container = ({ check_name, delelteClick }) => {
         <input
           type="checkbox"
           checked={isChecked}
-          onChange={handleOnChange}
+          // onChange={handleOnChange}
+          onChange={onCheckboxChange}
           className=" accent-gray-400 scale-150 text-black flex"
         />
         <p className={`text-black ${isChecked ? "line-through" : null}`}>
